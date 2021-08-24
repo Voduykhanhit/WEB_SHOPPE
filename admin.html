@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- reset CSS -->
+    <link rel="stylesheet" href="./assets/css/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/adminpage.css">
+
+</head>
+<body>
+    <div class="app">
+        <nav class="nav-header">
+            <ul class="nav-header__list">
+                <li class="nav-header__item">
+                    <a href="" class="nav-header__link">Start Bootstrap</a>
+                </li>
+                <li class="nav-header__item">
+                    <i class="fas fa-list nav-header__icon-list click" id="list"></i>
+                </li>
+            </ul>
+            <ul class="nav-header__list">
+                <li class="nav-header__item">
+                    <div class="nav-header__search">
+                        <input type="text" class="nav-header__search-input" placeholder="search">
+                        <button type="button" class="nav-header__search-button"><i class="fas fa-search nav-header__search-button-icon"></i></button>
+                    </div>
+                </li>
+                <li class="nav-header__item">
+                    <div class="nav-header__user dropbtn" onclick="myFunction()">
+                        <i class="fas fa-user nav-header__user-avatar" ></i>
+                        <i class="fas fa-caret-down nav-header__user-select"></i>
+                        <ul class="dropdown-user__list" id="myDropdown">
+                            <li class="dropdown-user__item">
+                                <a href="" class="dropdown-user__link">Setting</a>
+                            </li>
+                            <li class="dropdown-user__item">
+                                <a href="" class="dropdown-user__link">Activity</a>
+                            </li>
+                            <li class="dropdown-user__item">
+                                <a href="" class="dropdown-user__link">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+       </nav>
+      <nav class="nav-sidenav" id="nav-sidenav">
+           <ul class="nav-sidenav__list">
+               <li class="nav-sidenav__item">
+                   <span class="nav-sidenav__tittle">CORE</span>
+               </li>
+               <li class="nav-sidenav__item">
+                   <a href="" class="nav-sidenav__link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+               </li>
+               <li class="nav-sidenav__item">
+                   <span class="nav-sidenav__tittle">INTERFACE</span>
+               </li>
+               <li class="nav-sidenav__item">
+                   <a href="" class="nav-sidenav__link"><i class="fas fa-columns"></i> Layouts</a>
+               </li>
+               <li class="nav-sidenav__item">
+                   <a href="" class="nav-sidenav__link"><i class="fas fa-book-open"></i> Pages</a>
+               </li>
+               <li class="nav-sidenav__item">
+                   <span class="nav-sidenav__tittle">ADDON</span>
+               </li>
+               <li class="nav-sidenav__item">
+                   <a href="" class="nav-sidenav__link"><i class="fas fa-chart-area"></i> Charts</a>
+               </li>
+               <li class="nav-sidenav__item">
+                   <a href="" class="nav-sidenav__link"><i class="fas fa-table"></i> Tables</a>
+               </li>
+           </ul>
+       </nav>
+       <div class="wrap-content">
+           <h1 class="wrap-content__heading">WELCOME TO DASHBOARD</h1>
+           <table class="wrap-content__table">
+               <thead>
+                   <th>ID</th>
+                   <th>Name</th>
+                   <th>Description</th>
+                   <th>Status</th>
+                   <th>Action</th>
+               </thead>
+               <tbody>
+                   <td>AASDAD</td>
+                   <td>ASDASD</td>
+                   <td>ASDASD</td>
+                   <td>ASDASD</td>
+                   <td>ASASD</td>
+               </tbody>
+           </table>
+       </div>
+    </div>
+   <script>
+    //    click
+    //    var iconlist = document.getElementById("list");
+    //    iconlist.addEventListener('click',function(){
+    //         document.getElementById("nav-sidenav").classList.toggle("turnoff-nav");
+    //         // document.getElementById("list").classList.toggle("click");
+    //    })
+       window.onclick = function(event) {
+                if (event.target.matches('.click')) {
+                    var dropdowns = document.getElementsByClassName("nav-sidenav");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    console.log(openDropdown.classList.contains('turnoff-nav'));
+                    if (openDropdown.classList.contains('turnoff-nav')) {
+                        openDropdown.classList.remove('turnoff-nav');
+                        document.getElementById("nav-sidenav").classList.toggle("show-nav");
+                    }else{
+                        openDropdown.classList.remove('show-nav');
+                        document.getElementById("nav-sidenav").classList.toggle("turnoff-nav");
+                    }
+                }
+                }
+            if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-user__list");
+                    
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+            
+        }
+       function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+   </script>
+</body>
+</html>
+
+
+
